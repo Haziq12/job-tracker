@@ -4,7 +4,19 @@ import main from '../assets/images/main.svg'
 
 const Landing = () => {
   return (
-    <div>Landing Page</div>
+    <main>
+      <nav>
+        <img src={logo} alt='Job Tracker' className='logo' />
+      </nav>
+      <div className='container page'>
+        <div className='info'>
+          <h1>
+            Job <span>Tracking</span> App
+          </h1>
+          <p>Track your job application process better</p>
+        </div>
+      </div>
+    </main>
   )
 }
 
