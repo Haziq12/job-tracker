@@ -32,6 +32,12 @@ nav{
   display: flex;
   align-items: center;
 }
+.page{
+  min-height: calc(100vh - var(--nav-height));
+  display: grid;
+  align-items: center;
+  margin-top: -3rem;
+}
 `
 
 export default Landing
