@@ -16,7 +16,7 @@ const Register = () => {
 
 
   const toggleMember = () => {
-    setValues({...values, isMember:!values.isMember})
+    setValues({ ...values, isMember: !values.isMember })
   }
 
   const handleChange = (e) => {
@@ -33,13 +33,16 @@ const Register = () => {
       <form className='form' onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
+        <h3>{values.isMember ? 'Login' : 'Register'</h3>
         {values.showAlert && <Alert />}
-        <FormRow
-          type='text'
-          name='name'
-          value={values.name}
-          handleChange={handleChange}
-        />
+        {!values.isMember && (
+          <FormRow
+            type='text'
+            name='name'
+            value={values.name}
+            handleChange={handleChange}
+          />
+        )}
         {/* email input */}
         <FormRow
           type='email'
