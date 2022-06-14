@@ -8,11 +8,16 @@ const initialState = {
   email: '',
   password: '',
   isMember: true,
-  showAlert: true
+  showAlert: false
 }
 
 const Register = () => {
   const [values, setValues] = useState(initialState)
+
+
+  const toggleMember = () => {
+    setValues({...values, isMember:!values.isMember})
+  }
 
   const handleChange = (e) => {
     console.log(e.target)
@@ -50,6 +55,9 @@ const Register = () => {
           handleChange={handleChange}
         />
         <button type='submit' className='btn btn-block'>Submit</button>
+        <p>
+          <button type='button' onClick={toggleMember} className='member-btn'>Register</button>
+        </p>
       </form>
     </Wrapper>
   )
