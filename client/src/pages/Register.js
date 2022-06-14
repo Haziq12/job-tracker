@@ -12,12 +12,34 @@ const initialState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialState)
-  
 
-  return (
+  const handleChange = (e) => {
+    console.log(e.target)
+  }
 
-    <h1>Register</h1>
-  )
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target)
+  }
+
+  return <Wrapper className='full-page'>
+    <from className='form' onSubmit={handleSubmit}>
+      <Logo />
+      <h3>Login</h3>
+      <div className="form-row">
+        <label htmlFor="name" className='form-label'>
+          Name 
+        </label>
+        <input 
+        type='text' 
+        value={values.name} 
+        name='name' 
+        onChange={handleChange} 
+        className='form-input' />  
+      </div>
+      <button type='submit' className='btn btn-block'>Submit</button>
+    </from>
+  </Wrapper>
 }
 
 export default Register
