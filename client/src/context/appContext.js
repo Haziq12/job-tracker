@@ -1,19 +1,28 @@
-import { useState, useReducer, useContext } from 'react'
+import React, { useState, useReducer, useContext } from 'react'
 
-const initialState = {
-  isLoading : false,
+export const initialState = {
+  isLoading: false,
   showAlert: false,
   alertText: '',
-  alertType: ''
+  alertType: '',
 }
-
-const appContext = React.createContext()
-
-const AppProvider = ({children}) => {
+const AppContext = React.createContext()
+const AppProvider = ({ children }) => {
   const [state, setState] = useState(initialState)
 
-return <appContext.Provider value={{...state}}>
-  {children}
-</appContext.Provider>
+  return (
+    <AppContext.Provider
+      value={{
+        ...state,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  )
 }
 
+export const useAppContext = () => {
+  return useContext(AppContext)
+}
+
+export { AppProvider }
