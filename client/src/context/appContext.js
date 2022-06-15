@@ -25,4 +25,4 @@ export const useAppContext = () => {
   return useContext(AppContext)
 }
 
-export { AppProvider }
+export { AppProvider, initialState, useAppContext }
