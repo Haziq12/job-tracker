@@ -12,10 +12,15 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
+  const displayAlert = () => {
+    dispatch({type: DISPLAY_ALERT})
+  }
+
   return (
     <AppContext.Provider
       value={{
         ...state,
+        displayAlert
       }}
     >
       {children}
