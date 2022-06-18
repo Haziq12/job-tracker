@@ -23,5 +23,13 @@ const UserSchema = new mongoose.Schema({
     maxLength: 20,
     trim: true,
     default: 'lastName'
+  },
+  location: {
+    type: String,
+    maxLength: 20,
+    trim: true,
+    default: 'city'
   }
 })
+
+export default mongoose.model('User', UserSchema)
