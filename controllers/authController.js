@@ -1,12 +1,8 @@
 import User from '../models/User.js'
 
-const register = async (req, res, next) => {
-  try {
+const register = async (req, res) => {
     const user = await User.create(req.body)
     res.status(201).json({ user })
-  } catch (err) {
-    next(err)
-  }
 }
 
 const login = async (req, res) => {
