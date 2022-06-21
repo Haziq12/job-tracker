@@ -36,7 +36,8 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         ...state,
-        displayAlert
+        displayAlert,
+        registerUser
       }}
     >
       {children}
