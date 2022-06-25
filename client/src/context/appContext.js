@@ -9,7 +9,8 @@ export const initialState = {
   alertType: '',
   user: null,
   token: null,
-  userLocation: ''
+  userLocation: '',
+  jobLocation: ''
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
