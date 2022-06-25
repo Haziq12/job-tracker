@@ -29,7 +29,11 @@ const reducer = (state, action) => {
       token: action.payload.token, 
       user: action.payload.user, 
       userLocation: action.payload.location, 
-      jobLocation: action.payload.location }
+      jobLocation: action.payload.location,
+      showAlert: true,
+      alertType: 'success',
+      alertText: 'User Created! Redirecting...' 
+    }
   }
 
   throw new Error(`no such action :${action.type}`)
