@@ -15,6 +15,7 @@ const initialState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialState)
+  const navigate = useNavigate()
   const {user, isLoading, showAlert, displayAlert, registerUser} = useAppContext()
 
   const toggleMember = () => {
@@ -40,6 +41,12 @@ const Register = () => {
     }
     console.log(values)
   }
+
+  useEffect(() => {
+    if(user) {
+      navigate('/')
+    }
+  }, [user, navigate])
 
   return (
     <Wrapper className='full-page'>
