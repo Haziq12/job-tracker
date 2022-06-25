@@ -17,6 +17,10 @@ const reducer = (state, action) => {
       alertText: ''
     }
   }
+
+  if(action.type === REGISTER_USER_BEGIN) {
+    return {...state, isLoading: true}
+  }
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
