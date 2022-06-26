@@ -3,6 +3,10 @@ import reducer from './reducer'
 import { DISPLAY_ALERT, CLEAR_ALERT, REGISTER_USER_BEGIN, REGISTER_USER_SUCCESS, REGISTER_USER_ERROR } from './actions'
 import axios from 'axios'
 
+const token = localStorage.getItem('token')
+const user = localStorage.getItem('user')
+const location = localStorage.getItem('location')
+
 export const initialState = {
   isLoading: false,
   showAlert: false,
@@ -51,6 +55,7 @@ const AppProvider = ({ children }) => {
         type: REGISTER_USER_SUCCESS, 
         payload: { user, token, location } 
       })
+      addUserToLocalStorage({user, token, location})
     } catch (err) {
       dispatch({
         type:REGISTER_USER_ERROR, 
