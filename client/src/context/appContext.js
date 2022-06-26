@@ -5,17 +5,17 @@ import axios from 'axios'
 
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user')
-const location = localStorage.getItem('location')
+const userLocation = localStorage.getItem('location')
 
 export const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: '',
   alertType: '',
-  user: null,
-  token: null,
-  userLocation: '',
-  jobLocation: ''
+  user: user? JSON.parse(user) : null,
+  token: token,
+  userLocation: userLocation || '',
+  jobLocation: userLocation || ''
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
