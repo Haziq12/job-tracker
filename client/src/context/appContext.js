@@ -75,7 +75,22 @@ const AppProvider = ({ children }) => {
   }
 
   const loginUser = async (currentUser) => {
-    console.log(currentUser)
+    dispatch({ type: LOGIN_USER_BEGIN })
+    try {
+      const {data} = await axios.post('/api/v1/auth/login', currentUser)
+      const { user, token, location } = data
+      dispatch({ 
+        type: LOGIN_USER_SUCCESS, 
+        payload: { user, token, location } 
+      })
+      addUserToLocalStorage({user, token, location})
+    } catch (err) {
+      dispatch({
+        type:LOGIN_USER_ERROR, 
+        payload: {msg:err.response.data.msg}
+      })
+    }
+    clearAlert()
   }
 
   return (
