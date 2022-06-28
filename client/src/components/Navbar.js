@@ -10,6 +10,7 @@ const Navbar = () => {
     <Wrapper>
       <div className="nav-center">
         <button 
+          type='button'
           className='toggle-btn' 
           onClick={() => console.log('toggle sidebar')}
           >
@@ -18,6 +19,15 @@ const Navbar = () => {
         <div>
           <Logo/>
           <h3 className='logo-text'>Dashboard</h3>
+        </div>
+        <div className="btn-container">
+          <button 
+          className='btn' 
+          type='button'
+          onClick={() => console.log('Show/hide dropdown')}
+          >
+            
+          </button>
         </div>
       </div>
     </Wrapper>
