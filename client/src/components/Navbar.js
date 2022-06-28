@@ -15,6 +15,10 @@ const Navbar = () => {
           >
             <FaAlignLeft/>
         </button>
+        <div>
+          <Logo/>
+          <h3 className='logo-text'>Dashboard</h3>
+        </div>
       </div>
     </Wrapper>
   )
