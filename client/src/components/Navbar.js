@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from '../assets/wrappers/Navbar'
-import {GrWorkshop} from 'react-icons/gr'
-import {FaAlignLeft, FaUserCircle, FaCaretDown} from 'react-icons/fa'
+import { GrWorkshop } from 'react-icons/gr'
+import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa'
 import { useAppContext } from '../context/appContext'
 import Logo from './Logo'
 
@@ -9,25 +9,35 @@ const Navbar = () => {
   return (
     <Wrapper>
       <div className="nav-center">
-        <button 
+        <button
           type='button'
-          className='toggle-btn' 
+          className='toggle-btn'
           onClick={() => console.log('toggle sidebar')}
-          >
-            <FaAlignLeft/>
+        >
+          <FaAlignLeft />
         </button>
         <div>
-          <Logo/>
+          <Logo />
           <h3 className='logo-text'>Dashboard</h3>
         </div>
         <div className="btn-container">
-          <button 
-          className='btn' 
-          type='button'
-          onClick={() => console.log('Show/hide dropdown')}
+          <button
+            className='btn'
+            type='button'
+            onClick={() => console.log('Show/hide dropdown')}
           >
-            
+            <FaUserCircle />
+            Haziq
+            <FaCaretDown />
           </button>
+          <div className="dropdown show-dropdown">
+            <button
+              type='button'
+              className='dropdown-btn'
+              onClick={() => console.log('Logout user clicked')}>
+              Logout
+            </button>
+          </div>
         </div>
       </div>
     </Wrapper>
