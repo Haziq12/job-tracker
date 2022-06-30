@@ -6,6 +6,7 @@ import { useAppContext } from '../context/appContext'
 import Logo from './Logo'
 
 const Navbar = () => {
+  const {toggleSidebar} = useAppContext()
   return (
     <Wrapper>
       <div className="nav-center">

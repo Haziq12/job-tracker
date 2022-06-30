@@ -84,9 +84,10 @@ const reducer = (state, action) => {
     }
   }  
 
-  if (action.type === LOGIN_USER_ERROR) {
+  if (action.type === TOGGLE_SIDEBAR) {
     return { 
       ...state, 
+      showSidebar: !state.showSidebar
     }
   }  
 
