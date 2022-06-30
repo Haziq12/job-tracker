@@ -95,13 +95,18 @@ const AppProvider = ({ children }) => {
     clearAlert()
   }
 
+  const toggleSidebar = () => {
+    dispatch({type: TOGGLE_SIDEBAR})
+  }
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         displayAlert,
         registerUser,
-        loginUser
+        loginUser,
+        toggleSidebar
       }}
     >
       {children}
