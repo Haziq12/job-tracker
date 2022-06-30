@@ -6,7 +6,8 @@ import {
   REGISTER_USER_ERROR,
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_ERROR
+  LOGIN_USER_ERROR,
+  TOGGLE_SIDEBAR
  } from "./actions"
 
 const reducer = (state, action) => {
@@ -80,6 +81,12 @@ const reducer = (state, action) => {
       showAlert: true,
       alertType: 'Danger',
       alertText: action.payload.msg 
+    }
+  }  
+
+  if (action.type === LOGIN_USER_ERROR) {
+    return { 
+      ...state, 
     }
   }  
 
