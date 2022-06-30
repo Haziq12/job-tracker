@@ -8,7 +8,8 @@ import {
   REGISTER_USER_ERROR,
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_ERROR
+  LOGIN_USER_ERROR,
+  TOGGLE_SIDEBAR
  } from './actions'
 import axios from 'axios'
 
@@ -24,7 +25,8 @@ export const initialState = {
   user: user? JSON.parse(user) : null,
   token: token,
   userLocation: userLocation || '',
-  jobLocation: userLocation || ''
+  jobLocation: userLocation || '',
+  showSidebar: false 
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
