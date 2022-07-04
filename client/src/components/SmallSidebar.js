@@ -21,7 +21,11 @@ const SmallSidebar = () => {
               <Logo/>
             </header>
             <div className="nav-links">
-              Nav Links 
+              {links.map((link) => {
+                const {text, path, id, icon} = link 
+                return <NavLink to={path} key={id} onClick={toggleSidebar}></NavLink>
+              })} 
+
              </div>
           </div>
         </div>
