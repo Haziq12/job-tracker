@@ -5,10 +5,17 @@ import Logo from '../components/Logo'
 import { useAppContext } from '../context/appContext' 
 
 
+
 const BigSidebar = () => {
+  const {showSidebar} = useAppContext()
+
   return (
     <Wrapper>
-      <h4>Big Sidebar</h4>
+      <div className={showSidebar?'sidebar-container show-sidebar' : 'sidebar-container'}>
+        <div className="content">
+          
+        </div>
+      </div>
     </Wrapper>
   )
 }
