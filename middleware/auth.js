@@ -7,7 +7,12 @@ const auth = async (req, res, next) => {
     throw new UnAuthenticatedError('Authentication Invalid')
   }
   const token = authHeader.split(' ')[1]
-  next()
+  try {
+    const payload = jwt.verify(token, process.env.JWT_SECRET)
+    next()
+  } catch (error) {
+    throw new UnAuthenticatedError('Authentication Invalid')
+  }
 }
 
 export default auth 
