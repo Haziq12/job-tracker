@@ -1,11 +1,11 @@
 PATCH http://localhost:3000/api/v1/auth/updateUser
 Content-Type: application/json
-Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzljZDU5MWU5YTJkZWI2YWUxZDFmMjIiLCJpYXQiOjE2NzEyMjM2NzQsImV4cCI6MTY3MTMxMDA3NH0.4yqxuVEbEnjm_-m899kUIfbovIqZDFfoRBPkdzs2KTE
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzljZDU5MWU5YTJkZWI2YWUxZDFmMjIiLCJpYXQiOjE2NzI2Njk0MjIsImV4cCI6MTY3Mjc1NTgyMn0.rxghWNB-OG8Ba93GJy03CQuK_rYS1iYYFKk9t3Y-Z10
 
 
 {
-  "email": "person@email",
-  "name": "person",
+  "email": "user@email.com",
+  "name": "peter",
   "lastName": "lastName",
   "location": "my city"
 }
