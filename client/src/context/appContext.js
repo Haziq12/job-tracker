@@ -34,11 +34,11 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const authFetch = axios.create({
-    baseUrl: '/api/v1',
+    baseURL: '/api/v1',
   })
 
   authFetch.interceptors.request.use((config) => {
-    config.headers.common['Authorization'] = `Bearer ${state.token}`
+    config.headers['Authorization'] = `Bearer ${state.token}`
     return config 
   }, (error) => {
     return Promise.reject(error)
