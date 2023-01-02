@@ -22,13 +22,35 @@ const Profile = () => {
         <h3>Profile</h3>
         {showAlert && <Alert />}
         <div className="form-center">
-          <FormRow 
+          <FormRow
             type="text"
             name="name"
+            labelText="Name"
             value={name}
             handleChange={(e) => setName(e.target.value)}
-            >
-          </FormRow>
+          />
+          <FormRow
+            type="text"
+            name="lastName"
+            labelText="Last Name"
+            value={lastName}
+            handleChange={(e) => setLastName(e.target.value)}
+          />
+          <FormRow
+            type="email"
+            name="email"
+            labelText="Email"
+            value={email}
+            handleChange={(e) => setEmail(e.target.value)}
+          />
+          <FormRow
+            type="location"
+            name="location"
+            labelText="Location"
+            value={location}
+            handleChange={(e) => setLocation(e.target.value)}
+          />
+          <button className="btn btn-block" type='submit' disabled={isLoading}>{isLoading ? 'Please wait...' : 'Save changes'}</button>
         </div>
       </form>
     </Wrapper>
