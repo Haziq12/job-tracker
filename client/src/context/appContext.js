@@ -44,10 +44,13 @@ const AppProvider = ({ children }) => {
     return Promise.reject(error)
   })
 
-  authFetch.interceptors.response.use((config) => {
-    config.headers.common['Authorization'] = `Bearer ${state.token}`
-    return config 
+  authFetch.interceptors.response.use((response) => {
+    return response 
   }, (error) => {
+    console.log(error.response)
+    if(error.response.status === 401) {
+      console.log('AUTH ERROR')
+    }
     return Promise.reject(error)
   })
 
@@ -128,7 +131,7 @@ const AppProvider = ({ children }) => {
       const {data} = await authFetch.patch('/auth/updateUser', currentUser)
       console.log(data)
     } catch (err) {
-      console.log(err.response)
+      // console.log(err.response)
     }
   }
 
