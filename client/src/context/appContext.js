@@ -114,7 +114,7 @@ const AppProvider = ({ children }) => {
 
   const updateUser = async (currentUser) => {
     try {
-      const {data} = await axios.patch('api/v1/auth/updateUser', currentUser)
+      const {data} = await authFetch.patch('/auth/updateUser', currentUser)
       console.log(data)
     } catch (err) {
       console.log(err.response)
