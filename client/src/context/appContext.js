@@ -137,7 +137,9 @@ const AppProvider = ({ children }) => {
       dispatch({ type: UPDATE_USER_SUCCESS, payload: { user, location, token } })
       addUserToLocalStorage({ user, location, token })
     } catch (err) {
-      dispatch({ type: UPDATE_USER_ERROR, payload: { msg: err.response.data.msg } })
+      if (err.response.status !== 401) {
+        dispatch({ type: UPDATE_USER_ERROR, payload: { msg: err.response.data.msg } })
+      }
     }
     clearAlert()
   }
