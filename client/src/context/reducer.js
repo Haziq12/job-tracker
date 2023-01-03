@@ -90,6 +90,35 @@ const reducer = (state, action) => {
     }
   }  
 
+
+  if (action.type === UPDATE_USER_BEGIN) {
+    return { ...state, isLoading: true }
+  }
+
+  if (action.type === UPDATE_USER_SUCCESS) {
+    return { 
+      ...state, 
+      isLoading: false, 
+      token: action.payload.token, 
+      user: action.payload.user, 
+      userLocation: action.payload.location, 
+      jobLocation: action.payload.location,
+      showAlert: true,
+      alertType: 'success',
+      alertText: 'User Updated! Redirecting...' 
+    }
+  }
+
+  if (action.type === UPDATE_USER_ERROR) {
+    return { 
+      ...state, 
+      isLoading: false, 
+      showAlert: true,
+      alertType: 'Danger',
+      alertText: action.payload.msg 
+    }
+  }
+
   if (action.type === TOGGLE_SIDEBAR) {
     return { 
       ...state, 
