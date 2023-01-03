@@ -105,7 +105,7 @@ const reducer = (state, action) => {
       jobLocation: action.payload.location,
       showAlert: true,
       alertType: 'success',
-      alertText: 'User Updated! Redirecting...' 
+      alertText: 'User Updated!' 
     }
   }
 
