@@ -3,6 +3,7 @@ import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
 const AddJob = () => {
+
   const {
     isEditing,
     showAlert,
@@ -15,8 +16,18 @@ const AddJob = () => {
     status,
     statusOptions,
   } = useAppContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
-    <h1>Add Jobs Page</h1>
+    <Wrapper>
+      <form onSubmit={handleSubmit}>
+
+      </form>
+    </Wrapper>
+
   )
 }
 
