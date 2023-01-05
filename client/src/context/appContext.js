@@ -29,8 +29,16 @@ export const initialState = {
   user: user ? JSON.parse(user) : null,
   token: token,
   userLocation: userLocation || '',
+  showSidebar: false,
+  isEditing: false, 
+  editJobId: '',
+  position: '',
+  company: '',
   jobLocation: userLocation || '',
-  showSidebar: false
+  jobTypeOptions: ['Full Time', 'Part Time', 'Remote', 'Internship'],
+  jobType: 'Full Time',
+  statusOptions: ['Interview', 'Declined', 'Pending'],
+  status: 'Pending'
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
