@@ -23,8 +23,9 @@ const AddJob = () => {
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit}>
-
+      <form className='form'>
+        <h3>Add Job</h3>
+        {showAlert && <Alert/>} 
       </form>
     </Wrapper>
 
