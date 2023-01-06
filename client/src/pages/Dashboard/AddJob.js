@@ -22,20 +22,34 @@ const AddJob = () => {
   // }
 
   const handleJobInput = (e) => {
-    const name = e.target.name 
-    const value = e.target.value 
+    const name = e.target.name
+    const value = e.target.value
     console.log(`${name} : ${value}`)
   }
 
   return (
-    <Wrapper> 
+    <Wrapper>
       <form className='form'>
         <h3>{isEditing ? 'Editing' : 'Add Job'}</h3>
-        {showAlert && <Alert/>} 
+        {showAlert && <Alert />}
         <div className="form-center">
-          <FormRow tpye="text" name="position" value={position}/>
+          <FormRow
+            tpye="text"
+            name="position"
+            value={position}
+            onChange={handleJobInput} />
+            <FormRow
+            tpye="text"
+            name="company"
+            value={company}
+            onChange={handleJobInput} />
+            <FormRow
+            tpye="text"
+            name="jobLocation"
+            value={jobLocation}
+            onChange={handleJobInput} />
+            
         </div>
-        
       </form>
     </Wrapper>
 
