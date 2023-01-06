@@ -21,7 +21,11 @@ const AddJob = () => {
   //   e.preventDefault()
   // }
 
-  
+  const handleJobInput = (e) => {
+    const name = e.target.name 
+    const value = e.target.value 
+    console.log(`${name} : ${value}`)
+  }
 
   return (
     <Wrapper> 
