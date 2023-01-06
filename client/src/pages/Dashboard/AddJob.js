@@ -34,21 +34,26 @@ const AddJob = () => {
         {showAlert && <Alert />}
         <div className="form-center">
           <FormRow
-            tpye="text"
+            type="text"
             name="position"
             value={position}
-            onChange={handleJobInput} />
+            handleChange={handleJobInput} />
             <FormRow
-            tpye="text"
+            type="text"
             name="company"
             value={company}
-            onChange={handleJobInput} />
+            handleChange={handleJobInput} />
             <FormRow
-            tpye="text"
+            type="text"
+            labelText="Job Location"
             name="jobLocation"
             value={jobLocation}
-            onChange={handleJobInput} />
-            
+            handleChange={handleJobInput} />
+            <div className="btn-container">
+              <button type="submit" className="btn btn-block submit-btn">
+                Submit
+              </button>
+            </div>
         </div>
       </form>
     </Wrapper>
