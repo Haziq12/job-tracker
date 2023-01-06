@@ -27,6 +27,15 @@ const AddJob = () => {
     console.log(`${name} : ${value}`)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(!position || !company || !jobLocation) {
+      displayAlert()
+      return 
+    }
+    console.log(`Job created`)
+  }
+
   return (
     <Wrapper>
       <form className='form'>
