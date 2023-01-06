@@ -59,7 +59,7 @@ const AddJob = () => {
             value={jobLocation}
             handleChange={handleJobInput} />
             <div className="btn-container">
-              <button type="submit" className="btn btn-block submit-btn">
+              <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
                 Submit
               </button>
             </div>
