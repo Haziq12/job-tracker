@@ -17,15 +17,21 @@ const AddJob = () => {
     statusOptions,
   } = useAppContext();
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  // }
+
+  
 
   return (
-    <Wrapper>
+    <Wrapper> 
       <form className='form'>
-        <h3>Add Job</h3>
+        <h3>{isEditing ? 'Editing' : 'Add Job'}</h3>
         {showAlert && <Alert/>} 
+        <div className="form-center">
+          <FormRow tpye="text" name="position" value={position}/>
+        </div>
+        
       </form>
     </Wrapper>
 
