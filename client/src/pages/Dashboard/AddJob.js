@@ -1,4 +1,4 @@
-import { FormRow, Alert } from '../../components/index'
+import { FormRow, FormRowSelect, Alert } from '../../components/index'
 import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
@@ -58,23 +58,7 @@ const AddJob = () => {
             name="jobLocation"
             value={jobLocation}
             handleChange={handleJobInput} />
-          <div className="form-row">
-            <label htmlFor="jobType" className="form-label">
-              Job Type
-            </label>
-            <select
-              name="jobType"
-              value={jobType}
-              handleChange={handleJobInput}
-              className='form-select'
-            >
-              {jobTypeOptions.map((itemValue, index) => {
-                return <option key={index} value={itemValue}>
-                  {itemValue}
-                </option>
-              })}
-            </select>
-          </div>
+          
           <div className="btn-container">
             <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
               Submit
