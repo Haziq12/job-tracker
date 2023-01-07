@@ -60,16 +60,18 @@ const AddJob = () => {
             handleChange={handleJobInput} />
           <div className="form-row">
             <label htmlFor="jobType" className="form-label">
-              Job Type 
+              Job Type
             </label>
-            <select 
-            name="jobType" 
-            value={jobType} 
-            handleChange={handleJobInput}
-            className='form-select'
+            <select
+              name="jobType"
+              value={jobType}
+              handleChange={handleJobInput}
+              className='form-select'
             >
               {jobTypeOptions.map((itemValue, index) => {
-                return <option key={index} value={itemValue}>{itemValue}</option>
+                return <option key={index} value={itemValue}>
+                  {itemValue}
+                </option>
               })}
             </select>
           </div>
