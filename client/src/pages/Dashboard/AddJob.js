@@ -29,9 +29,9 @@ const AddJob = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(!position || !company || !jobLocation) {
+    if (!position || !company || !jobLocation) {
       displayAlert()
-      return 
+      return
     }
     console.log(`Job created`)
   }
@@ -47,22 +47,35 @@ const AddJob = () => {
             name="position"
             value={position}
             handleChange={handleJobInput} />
-            <FormRow
+          <FormRow
             type="text"
             name="company"
             value={company}
             handleChange={handleJobInput} />
-            <FormRow
+          <FormRow
             type="text"
             labelText="Job Location"
             name="jobLocation"
             value={jobLocation}
             handleChange={handleJobInput} />
-            <div className="btn-container">
-              <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
-                Submit
-              </button>
-            </div>
+          <div className="form-row">
+            <label htmlFor="jobType" className="form-label">
+              Job Type 
+            </label>
+            <select 
+            name="jobType" 
+            value={jobType} 
+            handleChange={handleJobInput}
+            className='form-select'
+            >
+              {}
+            </select>
+          </div>
+          <div className="btn-container">
+            <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </Wrapper>
