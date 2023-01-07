@@ -68,7 +68,9 @@ const AddJob = () => {
             handleChange={handleJobInput}
             className='form-select'
             >
-              {}
+              {jobTypeOptions.map((itemValue, index) => {
+                return <option key={index} value={itemValue}>{itemValue}</option>
+              })}
             </select>
           </div>
           <div className="btn-container">
