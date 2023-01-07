@@ -58,7 +58,7 @@ const AddJob = () => {
             name="jobLocation"
             value={jobLocation}
             handleChange={handleJobInput} />
-          
+          <FormRowSelect name={status} value={status} handleChange={handleJobInput} list={statusOptions} />
           <div className="btn-container">
             <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
               Submit
