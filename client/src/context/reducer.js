@@ -11,7 +11,8 @@ import {
   LOGOUT_USER,
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
-  UPDATE_USER_ERROR
+  UPDATE_USER_ERROR,
+  HANDLE_CHANGE
  } from "./actions"
 
  import { initialState } from "./appContext"
