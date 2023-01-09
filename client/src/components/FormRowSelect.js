@@ -7,7 +7,7 @@ function FormRowSelect({labelText, name, value, handleChange, list }) {
             <select
               name={name}
               value={value} 
-              handleChange={handleChange}
+              onChange={handleChange}
               className='form-select'
             >
               {list.map((itemValue, index) => {

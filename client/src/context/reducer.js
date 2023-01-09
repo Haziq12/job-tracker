@@ -126,6 +126,7 @@ const reducer = (state, action) => {
       showSidebar: !state.showSidebar
     }
   }  
+
   if(action.type === LOGOUT_USER) {
     return {...initialState, user:null, token:null, jobLocation:'', userLocation:''}
   }
@@ -133,7 +134,7 @@ const reducer = (state, action) => {
   if(action.type === HANDLE_CHANGE) {
     return {
       ...state,
-      [action.payload.name] : [action.payload.value]
+      [action.payload.name] : action.payload.value
     }
   }
 
