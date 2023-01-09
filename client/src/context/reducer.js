@@ -130,6 +130,13 @@ const reducer = (state, action) => {
     return {...initialState, user:null, token:null, jobLocation:'', userLocation:''}
   }
 
+  if(action.type === HANDLE_CHANGE) {
+    return {
+      ...state,
+      [action.payload.name] : [action.payload.value]
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
