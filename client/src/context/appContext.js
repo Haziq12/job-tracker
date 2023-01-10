@@ -14,7 +14,8 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
-  HANDLE_CHANGE
+  HANDLE_CHANGE,
+  CLEAR_VALUES
 } from './actions'
 import axios from 'axios'
 
