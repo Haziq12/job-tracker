@@ -69,7 +69,6 @@ const AddJob = () => {
             <button className='btn btn-block clear-btn' onClick={(e) => {
               e.preventDefault()
               clearValues()
-              console.log('Clear hello')
             }}>
               Clear 
             </button>
