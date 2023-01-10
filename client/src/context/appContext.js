@@ -157,6 +157,10 @@ const AppProvider = ({ children }) => {
     dispatch({type:HANDLE_CHANGE, payload: {name, value}}) 
   }
 
+  const clearValues = () => {
+    dispatch({type:CLEAR_VALUES})
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -167,7 +171,8 @@ const AppProvider = ({ children }) => {
         toggleSidebar,
         logoutUser,
         updateUser,
-        handleChange
+        handleChange,
+        clearValues
       }}
     >
       {children}
