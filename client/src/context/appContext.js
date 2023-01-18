@@ -175,6 +175,8 @@ const AppProvider = ({ children }) => {
         jobType, 
         status
       })
+      dispatch({type:CREATE_JOB_SUCCESS})
+      dispatch({type:CLEAR_VALUES})
     } catch (err) {
 
     }
