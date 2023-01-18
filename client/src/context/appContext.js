@@ -164,6 +164,15 @@ const AppProvider = ({ children }) => {
     dispatch({type:CLEAR_VALUES})
   }
 
+  const createJob = async () => {
+    dispatch({type:CREATE_JOB_BEGIN})
+    try {
+      
+    } catch (err) {
+
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
