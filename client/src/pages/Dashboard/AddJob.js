@@ -5,6 +5,7 @@ import Wrapper from '../../assets/wrappers/DashboardFormPage'
 const AddJob = () => {
 
   const {
+    isLoading,
     isEditing,
     showAlert,
     displayAlert,
@@ -26,7 +27,7 @@ const AddJob = () => {
   const handleJobInput = (e) => {
     const name = e.target.name
     const value = e.target.value
-    handleChange({name, value})
+    handleChange({ name, value })
   }
 
   const handleSubmit = (e) => {
@@ -63,14 +64,18 @@ const AddJob = () => {
           <FormRowSelect name='status' value={status} handleChange={handleJobInput} list={statusOptions} />
           <FormRowSelect name='jobType' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
           <div className="btn-container">
-            <button type="submit" className="btn btn-block submit-btn" onClick={handleSubmit}>
+            <button
+              type="submit"
+              className="btn btn-block submit-btn"
+              onClick={handleSubmit}
+              disabled={isLoading}>
               Submit
             </button>
             <button className='btn btn-block clear-btn' onClick={(e) => {
               e.preventDefault()
               clearValues()
             }}>
-              Clear 
+              Clear
             </button>
           </div>
         </div>
