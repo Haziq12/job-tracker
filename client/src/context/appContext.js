@@ -166,8 +166,15 @@ const AppProvider = ({ children }) => {
 
   const createJob = async () => {
     dispatch({type:CREATE_JOB_BEGIN})
-    try {
-      
+    try { 
+      const {position, company, jobLocation, jobType, status} = state
+      await authFetch.post('/jobs', {
+        position, 
+        company, 
+        jobLocation, 
+        jobType, 
+        status
+      })
     } catch (err) {
 
     }
