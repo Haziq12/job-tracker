@@ -158,6 +158,20 @@ const reducer = (state, action) => {
     }
   }
 
+  if(action.type === CREATE_JOB_BEGIN) {
+    return {...state, isLoading:true}
+  }
+
+  if (action.type === CREATE_JOB_SUCCESS) {
+    return { 
+      ...state, 
+      isLoading: false, 
+      showAlert: true,
+      alertType: 'success',
+      alertText: 'Job has been added' 
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
