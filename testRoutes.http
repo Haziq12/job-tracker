@@ -22,9 +22,13 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/api/v1/jobs
 Content-Type: application/json
-Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzljZDU5MWU5YTJkZWI2YWUxZDFmMjIiLCJpYXQiOjE2NzI4MDgzMzUsImV4cCI6MTY3Mjg5NDczNX0.O78nYffQv1mut3qZoD5VSNTtPj7B3DV4NCHK_xTv51Q
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzljZDU5MWU5YTJkZWI2YWUxZDFmMjIiLCJpYXQiOjE2NzQxNjY3NDUsImV4cCI6MTY3NDI1MzE0NX0.JRyFxQPh9ECAFcYRyRKFCs_QeGr2yoDJHfN8ihQbnVw
 
 {
   "company": "BIG",
   "position": "full stack"
 }
+
+###
+GET http://localhost:3000/api/v1/jobs
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzljZDU5MWU5YTJkZWI2YWUxZDFmMjIiLCJpYXQiOjE2NzQxNjY3NDUsImV4cCI6MTY3NDI1MzE0NX0.JRyFxQPh9ECAFcYRyRKFCs_QeGr2yoDJHfN8ihQbnVw
