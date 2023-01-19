@@ -37,7 +37,10 @@ const AddJob = () => {
       displayAlert()
       return
     }
-    console.log(`Job created`)
+    if(isEditing) {
+      return 
+    }
+    createJob()
   }
 
   return (
