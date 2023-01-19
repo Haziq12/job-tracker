@@ -17,7 +17,8 @@ const AddJob = () => {
     status,
     statusOptions,
     handleChange,
-    clearValues
+    clearValues,
+    createJob
   } = useAppContext();
 
   // const handleSubmit = (e) => {
