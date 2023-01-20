@@ -43,7 +43,11 @@ export const initialState = {
   jobTypeOptions: ['Full Time', 'Part Time', 'Remote', 'Internship'],
   jobType: 'Full Time',
   statusOptions: ['Interview', 'Declined', 'Pending'],
-  status: 'Pending'
+  status: 'Pending',
+  jobs: [],
+  totalJobs: 0,
+  numOfPages: 1,
+  page: 1
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
