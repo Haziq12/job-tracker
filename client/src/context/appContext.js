@@ -192,6 +192,16 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const getJobs = async () => {
+    let url = `/jobs`
+    dispatch({type:GET_JOBS_BEGIN})
+    try {
+
+    } catch (err) {
+      
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
