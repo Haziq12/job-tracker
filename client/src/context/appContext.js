@@ -196,9 +196,14 @@ const AppProvider = ({ children }) => {
     let url = `/jobs`
     dispatch({type:GET_JOBS_BEGIN})
     try {
-
+      const { data } = await authFetch(url)
+      const { jobs, numOfPages, totalJobs } = data 
+      dispatch({
+        type: GET_JOBS_SUCCESS,
+        payload: {jobs, numOfPages, totalJobs}
+      })
     } catch (err) {
-      
+      console.log(`error`)
     }
   }
 
@@ -214,7 +219,8 @@ const AppProvider = ({ children }) => {
         updateUser,
         handleChange,
         clearValues,
-        createJob
+        createJob,
+        getJobs
       }}
     >
       {children}
