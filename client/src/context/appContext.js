@@ -203,7 +203,7 @@ const AppProvider = ({ children }) => {
         payload: {jobs, numOfPages, totalJobs}
       })
     } catch (err) {
-      console.log(`error`)
+      console.log(err.response)
     }
   }
 

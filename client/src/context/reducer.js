@@ -184,6 +184,14 @@ const reducer = (state, action) => {
     }
   }
 
+  if(action.type === GET_JOBS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      showAlert: false,
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
