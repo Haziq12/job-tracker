@@ -192,6 +192,16 @@ const reducer = (state, action) => {
     }
   }
 
+  if(action.type === GET_JOBS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      jobs: action.payload.jobs,
+      totalJobs: action.payload.totalJobs,
+      numOfPages: action.payload.numOfPages
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
