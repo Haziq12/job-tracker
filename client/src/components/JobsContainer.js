@@ -11,11 +11,11 @@ const JobsContainer = () => {
     getJobs()
   }, [])
 
-  if(isLoading) {
-    return <Loading center/>
+  if (isLoading) {
+    return <Loading center />
   }
 
-  if(jobs.length === 0) {
+  if (jobs.length === 0) {
     return (
       <Wrapper>
         <h2>No Jobs To Display...</h2>
@@ -26,11 +26,13 @@ const JobsContainer = () => {
   return (
     <Wrapper>
       <h5>{totalJobs} Job{jobs.length > 1 && 's'} Found</h5>
-      {jobs.map((job) => {
-        return (
-          <Job key={job._id} company={job.company}/>
-        )
-      })}
+      <div className="jobs">
+        {jobs.map((job) => {
+          return (
+            <Job key={job._id} {...job} />
+          )
+        })}
+      </div>
     </Wrapper>
   )
 }
