@@ -2,7 +2,9 @@ import React from 'react'
 
 const SearchContainer = () => {
   return (
-    <div>SearchContainer</div>
+    <h1>
+      SearchContainer
+    </h1>
   )
 }
 
