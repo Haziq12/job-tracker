@@ -6,14 +6,18 @@ import Job from './Job'
 
 const JobsContainer = () => {
   const { getJobs, jobs, isLoading, page, totalJobs } = useAppContext()
-  
+
   useEffect(() => {
     getJobs()
   }, [])
 
+  if(isLoading) {
+    return <Loading center/>
+  }
+  
   return (
     <Wrapper>
-      <Loading />
+      
     </Wrapper>
   )
 }
