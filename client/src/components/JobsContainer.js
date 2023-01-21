@@ -25,7 +25,12 @@ const JobsContainer = () => {
 
   return (
     <Wrapper>
-      
+      <h5>{totalJobs} Job{jobs.length > 1 && 's'} Found</h5>
+      {jobs.map((job) => {
+        return (
+          <Job key={job._id} company={job.company}/>
+        )
+      })}
     </Wrapper>
   )
 }
