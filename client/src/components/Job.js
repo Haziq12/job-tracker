@@ -20,6 +20,12 @@ const Job = ({ company, createdAt, _id, position, jobLocation, jobType, status }
         </div>
       </header>
       <div className="content">
+        <div className="content-center">
+          <JobInfo icon={<FaLocationArrow />} text={jobLocation}></JobInfo>
+          <JobInfo icon={<FaCalendarAlt />} text={date}></JobInfo>
+          <JobInfo icon={<FaBriefcase />} text={jobType}></JobInfo>
+          <div className={`status ${status}`}>{status}</div>
+        </div>
         <footer>
           <div className="actions">
             <Link
