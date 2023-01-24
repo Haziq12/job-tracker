@@ -214,6 +214,10 @@ const AppProvider = ({ children }) => {
     dispatch({type:SET_EDIT_JOB, payload:{id}})
   }
 
+  const editJob = () => {
+    console.log(`edit job`)
+  }
+
   const deleteJob = (id) => {
     console.log(`deleteJob id: ${id}`)
   }
@@ -233,7 +237,8 @@ const AppProvider = ({ children }) => {
         createJob,
         getJobs,
         setEditJob,
-        deleteJob
+        deleteJob,
+        editJob
       }}
     >
       {children}
