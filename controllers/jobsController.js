@@ -1,6 +1,6 @@
 import Job from "../models/Job.js"
 import { StatusCodes } from "http-status-codes"
-import { BadRequestError, NotFoundError } from '../errors/index.js'
+import { BadRequestError, NotFound } from '../errors/index.js'
 
 const createJob = async (req, res) => {
   const { company, position } = req.body
@@ -28,15 +28,15 @@ const updateJob = async (req, res) => {
   }
   const job = await Job.findOne({ _id: jobID })
   if(!job) {
-    throw new NotFoundError(`Job not found with ID: ${jobID}`)
+    throw new NotFound(`Job not found with ID: ${jobID}`)
   }
   
   const updatedJob = await Job.findOneAndUpdate(job, req.body, {
     new: true,
     runValidators: true
   })
-  
-  res.status(StatusCodes.OK).json({ updateJob })
+
+  res.status(StatusCodes.OK).json({ updatedJob })
 }
 
 const deleteJob = async (req, res) => {
