@@ -30,7 +30,15 @@ const updateJob = async (req, res) => {
   if(!job) {
     throw new NotFoundError(`Job not found with ID: ${jobID}`)
   }
+  
+  const updatedJob = await Job.findOneAndUpdate(job, req.body, {
+    new: true,
+    runValidators: true
+  })
+  
+  res.status(StatusCodes.OK).json({ updateJob })
 }
+
 const deleteJob = async (req, res) => {
   res.send('Delete Job')
 }
