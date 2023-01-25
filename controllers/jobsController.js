@@ -21,7 +21,12 @@ const getAllJobs = async (req, res) => {
 }
 
 const updateJob = async (req, res) => {
-  res.send('Update Job')
+  const {id:jobID} = req.params 
+  const {company, position} = req.body 
+  if(!company || !position) {
+    throw new BadRequestError(`Please provide all values`)
+  }
+  
 }
 const deleteJob = async (req, res) => {
   res.send('Delete Job')
