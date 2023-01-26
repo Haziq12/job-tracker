@@ -48,6 +48,7 @@ const deleteJob = async (req, res) => {
   if(!job) {
     throw new NotFound(`No job found with id ${jobID}`)
   }
+  checkPermissions(req.use, job.createdBy)
   
 }
 const showStats = async (req, res) => {
