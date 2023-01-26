@@ -45,6 +45,10 @@ const updateJob = async (req, res) => {
 const deleteJob = async (req, res) => {
   const { id: jobID } = req.params
   const job = await Job.findOne({ _id: jobID })
+  if(!job) {
+    throw new NotFound(`No job found with id ${jobID}`)
+  }
+  
 }
 const showStats = async (req, res) => {
   res.send('Show Stats')
