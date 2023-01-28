@@ -17,7 +17,9 @@ const start = async () => {
     console.log(`Success`)
     process.exit(0)
   } catch (err) {
-    console.log(err)
+    console.log(err) 
     process.exit(1)
   }
 }
+
+start()

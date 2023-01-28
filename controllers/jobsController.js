@@ -1,3 +1,4 @@
+import mongoose from "mongoose"
 import Job from "../models/Job.js"
 import { StatusCodes } from "http-status-codes"
 import { BadRequestError, NotFound } from '../errors/index.js'
@@ -56,7 +57,10 @@ const deleteJob = async (req, res) => {
   res.send(StatusCodes.OK).json({msg:`Job removed`})
 }
 const showStats = async (req, res) => {
-  res.send('Show Stats')
+  let stats = await Job.aggregate([
+    {$match:{createdBy:mongoose.Types.ObjectId(req.user.userId)}}
+  ])
+  res.status(StatusCodes.OK).jdon({ stats }) 
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
