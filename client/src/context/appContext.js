@@ -189,8 +189,8 @@ const AppProvider = ({ children }) => {
       dispatch({ type: CREATE_JOB_SUCCESS })
       dispatch({ type: CLEAR_VALUES })
       setTimeout(() => {
-        dispatch({ type: CLEAR_ALERT })        
-      }, 2000) 
+        dispatch({ type: CLEAR_ALERT })
+      }, 2000)
     } catch (err) {
       if (err.response.status === 401) return
       dispatch({
@@ -202,13 +202,13 @@ const AppProvider = ({ children }) => {
 
   const getJobs = async () => {
     let url = `/jobs`
-    dispatch({type:GET_JOBS_BEGIN})
+    dispatch({ type: GET_JOBS_BEGIN })
     try {
       const { data } = await authFetch(url)
-      const { jobs, numOfPages, totalJobs } = data 
+      const { jobs, numOfPages, totalJobs } = data
       dispatch({
         type: GET_JOBS_SUCCESS,
-        payload: {jobs, numOfPages, totalJobs}
+        payload: { jobs, numOfPages, totalJobs }
       })
     } catch (err) {
       console.log(err.response)
@@ -218,15 +218,33 @@ const AppProvider = ({ children }) => {
   }
 
   const setEditJob = (id) => {
-    dispatch({type:SET_EDIT_JOB, payload:{id}})
+    dispatch({ type: SET_EDIT_JOB, payload: { id } })
   }
 
-  const editJob = () => {
-    console.log(`edit job`)
+  const editJob = async () => {
+    dispatch({ type: EDIT_JOB_BEGIN })
+    try {
+      const { position, company, jobLocation, jobType, status } = state
+      await authFetch.patch(`/jobs/${state.editJobId}`, {
+        company,
+        position,
+        jobLocation,
+        jobType,
+        status
+      })
+      dispatch({ type: EDIT_JOB_SUCCESS })
+      dispatch({ type: CLEAR_VALUES })
+    } catch (err) {
+      if (err.response.status === 401) return
+      dispatch({
+        type: EDIT_JOB_ERROR,
+        payload: { msg: err.response.data.msg }
+      })
+    }
   }
 
   const deleteJob = async (jobId) => {
-    dispatch({type: DELETE_JOB_BEGIN})
+    dispatch({ type: DELETE_JOB_BEGIN })
     try {
       await authFetch.delete(`/jobs/${jobId}`)
       getJobs()
