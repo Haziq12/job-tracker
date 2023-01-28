@@ -43,12 +43,13 @@ const updateJob = async (req, res) => {
 }
 
 const deleteJob = async (req, res) => {
+  console.log('here: ', req.user)
   const { id: jobID } = req.params
   const job = await Job.findOne({ _id: jobID })
   if(!job) {
     throw new NotFound(`No job found with id ${jobID}`)
   }
-  checkPermissions(req.use, job.createdBy)
+  checkPermissions(req.user, job.createdBy)
   await job.remove()
   res.send(StatusCodes.OK).json({msg:`Job removed`})
 }
@@ -57,3 +58,5 @@ const showStats = async (req, res) => {
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
+
+// 63c9bccb7042eaa84a2c5aa9
