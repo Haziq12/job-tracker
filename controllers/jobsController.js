@@ -58,5 +58,3 @@ const showStats = async (req, res) => {
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
-
-// 63c9bccb7042eaa84a2c5aa9
