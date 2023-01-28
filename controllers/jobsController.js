@@ -34,7 +34,7 @@ const updateJob = async (req, res) => {
 
   checkPermissions(req.user, job.createdBy)
 
-  const updatedJob = await Job.findOneAndUpdate(job, req.body, {
+  const updatedJob = await Job.findOneAndUpdate({ _id: jobID }, req.body, {
     new: true,
     runValidators: true
   })
