@@ -60,7 +60,7 @@ const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     {$match:{createdBy:mongoose.Types.ObjectId(req.user.userId)}}
   ])
-  res.status(StatusCodes.OK).jdon({ stats }) 
+  res.status(StatusCodes.OK).json({ stats }) 
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
