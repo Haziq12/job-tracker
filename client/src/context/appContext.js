@@ -22,7 +22,10 @@ import {
   GET_JOBS_BEGIN,
   GET_JOBS_SUCCESS,
   SET_EDIT_JOB,
-  DELETE_JOB_BEGIN
+  DELETE_JOB_BEGIN,
+  EDIT_JOB_BEGIN,
+  EDIT_JOB_SUCCESS,
+  EDIT_JOB_ERROR
 } from './actions'
 import axios from 'axios'
 
