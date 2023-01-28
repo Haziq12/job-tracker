@@ -21,7 +21,8 @@ import {
   CREATE_JOB_ERROR,
   GET_JOBS_BEGIN,
   GET_JOBS_SUCCESS,
-  SET_EDIT_JOB
+  SET_EDIT_JOB,
+  DELETE_JOB_BEGIN
 } from './actions'
 import axios from 'axios'
 
@@ -218,8 +219,15 @@ const AppProvider = ({ children }) => {
     console.log(`edit job`)
   }
 
-  const deleteJob = (id) => {
-    console.log(`deleteJob id: ${id}`)
+  const deleteJob = async (jobId) => {
+    dispatch({type: DELETE_JOB_BEGIN})
+    try {
+      await authFetch.delete(`/jobs/${jobId}`)
+      getJobs()
+    } catch (err) {
+      console.log(err, err.response, err.message)
+      // logoutUser()
+    }
   }
 
   return (
