@@ -27,7 +27,9 @@ const updateJob = async (req, res) => {
   if (!company || !position) {
     throw new BadRequestError(`Please provide all values`)
   }
+
   const job = await Job.findOne({ _id: jobID })
+
   if (!job) {
     throw new NotFound(`Job not found with ID: ${jobID}`)
   }
