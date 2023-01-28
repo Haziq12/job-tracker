@@ -188,9 +188,7 @@ const AppProvider = ({ children }) => {
       })
       dispatch({ type: CREATE_JOB_SUCCESS })
       dispatch({ type: CLEAR_VALUES })
-      setTimeout(() => {
-        dispatch({ type: CLEAR_ALERT })
-      }, 2000)
+      clearAlert()
     } catch (err) {
       if (err.response.status === 401) return
       dispatch({
@@ -241,6 +239,7 @@ const AppProvider = ({ children }) => {
         payload: { msg: err.response.data.msg }
       })
     }
+    clearAlert()
   }
 
   const deleteJob = async (jobId) => {
