@@ -257,6 +257,22 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const showStats = async () => {
+    dispatch({ type: SHOW_STATS_BEGIN })
+    try {
+      const { data } = await authFetch(`/jobs/stats`)
+      dispatch({
+        type: SHOW_STATS_SUCCESS, payload: {
+          stats: data.defaultStats,
+          monthlyApplications: data.monthlyApplications
+        },
+      })
+    } catch (err) {
+
+    }
+    clearValues()
+  }
+
   return (
     <AppContext.Provider
       value={{
