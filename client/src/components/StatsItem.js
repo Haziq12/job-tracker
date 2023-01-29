@@ -2,7 +2,9 @@ import React from 'react'
 
 function StatsItem() {
   return (
-    <div>StatsItem</div>
+    <>
+      <h1>Stats Item</h1>
+    </>
   )
 }
 

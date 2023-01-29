@@ -18,8 +18,11 @@ const Stats = () => {
   }
 
   return (
-    <h1>Stats Page</h1>
+    <>
+      <StatsContainer />
+      {monthlyApplications.length > 0 && <ChartsContainer />}
+    </>
   )
 }
 
-export default <Stats></Stats> 
+export default Stats  
