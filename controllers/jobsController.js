@@ -64,9 +64,9 @@ const showStats = async (req, res) => {
   ])
 
   stats = stats.reduce((acc, curr) => {
-    const { _id: title, count } = curr 
-    acc[title] = count 
-    return acc 
+    const { _id: title, count } = curr
+    acc[title] = count
+    return acc
   }, {})
 
   const defaultStats = {
@@ -75,7 +75,9 @@ const showStats = async (req, res) => {
     Declined: stats.Declined || 0,
   }
 
-  let monthlyApplications = []
+  let monthlyApplications = await Job.aggregate([
+    { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } }
+  ])
 
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
 }
