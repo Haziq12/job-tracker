@@ -291,7 +291,8 @@ const AppProvider = ({ children }) => {
         getJobs,
         setEditJob,
         deleteJob,
-        editJob
+        editJob,
+        showStats
       }}
     >
       {children}
