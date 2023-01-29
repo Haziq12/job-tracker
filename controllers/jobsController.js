@@ -84,6 +84,10 @@ const showStats = async (req, res) => {
         {
           year: { $year: 'createdAt' },
           month: { $month: 'createdAt' }
+        },
+        count:
+        {
+          $sum: 1
         }
       }
     }
