@@ -69,7 +69,15 @@ const showStats = async (req, res) => {
     return acc 
   }, {})
 
-  res.status(StatusCodes.OK).json({ stats })
+  const defaultStats = {
+    Pending: stats.Pending || 0,
+    Interview: stats.Interview || 0,
+    Declined: stats.Declined || 0,
+  }
+
+  let monthlyApplications = []
+
+  res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
