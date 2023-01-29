@@ -31,10 +31,11 @@ function StatsContainer() {
   ]
 
   return (
-    <div>
-      <h1>StatsContainer</h1>
-      <StatsItem />
-    </div>
+    <Wrapper>
+      {defaultStats.map((item, index) => {
+        return <StatsItem key={index} {...item} />
+      })}
+    </Wrapper>
   )
 }
 
