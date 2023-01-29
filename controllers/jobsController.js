@@ -65,7 +65,7 @@ const showStats = async (req, res) => {
 
   stats = stats.reduce((acc, curr) => {
     const { _id: title, count } = curr 
-    acc[curr] = count 
+    acc[title] = count 
     return acc 
   }, {})
 
