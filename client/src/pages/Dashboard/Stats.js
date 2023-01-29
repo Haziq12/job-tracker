@@ -9,6 +9,14 @@ const Stats = () => {
     showStats()
   }, [])
   
+  if(isLoading) {
+    return (
+      <>
+        <Loading center/>
+      </>
+    )
+  }
+
   return (
     <h1>Stats Page</h1>
   )

@@ -11,6 +11,7 @@ import JobInfo from './JobInfo'
 import Job from './Job'
 import StatsContainer from './StatsContainer'
 import ChartsContainer from './ChartsContainer'
+import Loading from './Loading'
 
 
 export {
@@ -26,5 +27,6 @@ export {
   JobInfo,
   Job,
   StatsContainer,
-  ChartsContainer
+  ChartsContainer,
+  Loading
 }
