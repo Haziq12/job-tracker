@@ -49,18 +49,19 @@ const deleteJob = async (req, res) => {
   console.log('here: ', req.user)
   const { id: jobID } = req.params
   const job = await Job.findOne({ _id: jobID })
-  if(!job) {
+  if (!job) {
     throw new NotFound(`No job found with id ${jobID}`)
   }
   checkPermissions(req.user, job.createdBy)
   await job.remove()
-  res.send(StatusCodes.OK).json({msg:`Job removed`})
+  res.send(StatusCodes.OK).json({ msg: `Job removed` })
 }
 const showStats = async (req, res) => {
   let stats = await Job.aggregate([
-    {$match:{createdBy:mongoose.Types.ObjectId(req.user.userId)}}
+    { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
+    { $group: { _id: '$status', count: { $sum: 1 } } }
   ])
-  res.status(StatusCodes.OK).json({ stats }) 
+  res.status(StatusCodes.OK).json({ stats })
 }
 
 export { createJob, deleteJob, getAllJobs, updateJob, showStats }
