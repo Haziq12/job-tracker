@@ -262,13 +262,15 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await authFetch(`/jobs/stats`)
       dispatch({
-        type: SHOW_STATS_SUCCESS, payload: {
+        type: SHOW_STATS_SUCCESS, 
+        payload: {
           stats: data.defaultStats,
           monthlyApplications: data.monthlyApplications
         },
       })
     } catch (err) {
-
+      console.log(err.response)
+      // logoutUser()
     }
     clearValues()
   }
