@@ -56,11 +56,19 @@ const deleteJob = async (req, res) => {
   await job.remove()
   res.send(StatusCodes.OK).json({ msg: `Job removed` })
 }
+
 const showStats = async (req, res) => {
   let stats = await Job.aggregate([
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
     { $group: { _id: '$status', count: { $sum: 1 } } }
   ])
+
+  stats = stats.reduce((acc, curr) => {
+    const { _id: title, count } = curr 
+    acc[curr] = count 
+    return acc 
+  }, {})
+
   res.status(StatusCodes.OK).json({ stats })
 }
 
