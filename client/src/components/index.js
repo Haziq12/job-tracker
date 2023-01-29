@@ -9,6 +9,9 @@ import SearchContainer from './SearchContainer'
 import JobsContainer from './JobsContainer'
 import JobInfo from './JobInfo'
 import Job from './Job'
+import StatsContainer from './StatsContainer'
+import ChartsContainer from './ChartsContainer'
+
 
 export {
   Logo,
@@ -21,5 +24,7 @@ export {
   SearchContainer,
   JobsContainer,
   JobInfo,
-  Job
+  Job,
+  StatsContainer,
+  ChartsContainer
 }
