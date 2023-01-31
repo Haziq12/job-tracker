@@ -10,7 +10,6 @@ function ChartsContainer() {
 
   return (
     <Wrapper>
-      <BarChartComponent />
       <h4>Monthly Applications</h4>
       <button 
       className="btn"
