@@ -8,9 +8,16 @@ import {
   Tooltip,
 } from 'recharts';
 
-function AreaChartComponent() {
+function AreaChartComponent({ data }) {
   return (
-    <h2>Area Chart</h2>
+    <ResponsiveContainer width='100%' height={300}>
+      <AreaChart
+        data={data}
+        margin={{ top: 50 }}
+      >
+
+      </AreaChart>
+    </ResponsiveContainer>
   )
 }
 
