@@ -1,7 +1,7 @@
 import Wrapper from "../assets/wrappers/ChartsContainer"
 import { useAppContext } from "../context/appContext"
+import BarChartComponent from "./BarChartComponent"
 import AreaChart from "./AreaChart"
-import BarChartContainer from "./BarChart"
 import { useState } from "react"
 
 function ChartsContainer() {
@@ -10,6 +10,7 @@ function ChartsContainer() {
 
   return (
     <Wrapper>
+      <BarChartComponent />
       <h4>Monthly Applications</h4>
       <button 
       className="btn"
@@ -17,7 +18,7 @@ function ChartsContainer() {
       onClick={() => setBarChart(!barChart)}>
         {barChart ? 'Area Chart' : 'Bar Chart'}
       </button>
-      {barChart ? <BarChartContainer data={data}/> : <AreaChart data={data}/>}
+      {barChart ? <BarChartComponent data={data}/> : <AreaChart data={data}/>}
     </Wrapper>
   )
 }
