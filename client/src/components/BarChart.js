@@ -1,9 +1,15 @@
-import React from 'react'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
 
-function BarChart() {
-  return (
-    <h2>Bar Chart</h2>
-  )
+const BarChartComponent = ({ data }) => {
+
 }
 
-export default BarChart
+export default BarChartComponent 
