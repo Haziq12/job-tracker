@@ -1,9 +1,17 @@
-import React from 'react'
+import {
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from 'recharts';
 
-function AreaChart() {
+function AreaChartComponent() {
   return (
     <h2>Area Chart</h2>
   )
 }
 
-export default AreaChart
+export default AreaChartComponent
