@@ -8,15 +8,13 @@ function ChartsContainer() {
   const [barChart, setBarChart] = useState(true)
   const {monthlyApplications:data} = useAppContext()
 
-  const toggleBarChart = () => {
-    if(barChart === true) setBarChart(false)
-    else setBarChart(true) 
-  }
   return (
     <Wrapper>
+      <h4>Monthly Applications</h4>
       <button 
       className="btn"
-      onClick={toggleBarChart}>
+      type="button"
+      onClick={() => setBarChart(!barChart)}>
         Toggle Chart
       </button>
       {barChart ? <BarChart data={data}/> : <AreaChart data={data}/>}
