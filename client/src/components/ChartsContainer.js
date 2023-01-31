@@ -15,7 +15,7 @@ function ChartsContainer() {
       className="btn"
       type="button"
       onClick={() => setBarChart(!barChart)}>
-        Toggle Chart
+        {barChart ? 'Area Chart' : 'Bar Chart'}
       </button>
       {barChart ? <BarChart data={data}/> : <AreaChart data={data}/>}
     </Wrapper>
