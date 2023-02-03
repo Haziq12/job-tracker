@@ -19,7 +19,10 @@ const createJob = async (req, res) => {
 }
 
 const getAllJobs = async (req, res) => {
-  let {status} = req.query 
+  let { status, jobType, sort, search } = req.query
+  const queryObject = {
+    cretedBy: req.user.userId
+  }
   const jobs = await Job.find({ createdBy: req.user.userId, status })
   res.status(StatusCodes.OK).json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
 }
@@ -91,9 +94,9 @@ const showStats = async (req, res) => {
   ])
 
   monthlyApplications = monthlyApplications.map((item) => {
-    const {_id:{year, month}, count} = item 
-    const date = moment().month(month -1).year(year).format('MMM Y')
-    return {date, count}
+    const { _id: { year, month }, count } = item
+    const date = moment().month(month - 1).year(year).format('MMM Y')
+    return { date, count }
   }).reverse()
 
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
