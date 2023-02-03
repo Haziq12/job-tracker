@@ -22,7 +22,7 @@ const getAllJobs = async (req, res) => {
   let { status, jobType, sort, search } = req.query
 
   const queryObject = {
-    cretedBy: req.user.userId
+    createdBy: req.user.userId
   }
 
   let result = Job.find(queryObject)
