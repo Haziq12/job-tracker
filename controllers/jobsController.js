@@ -20,10 +20,14 @@ const createJob = async (req, res) => {
 
 const getAllJobs = async (req, res) => {
   let { status, jobType, sort, search } = req.query
+
   const queryObject = {
     cretedBy: req.user.userId
   }
+
   let result = Job.find(queryObject)
+
+  const jobs = await result
   
   res.status(StatusCodes.OK).json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
 }
