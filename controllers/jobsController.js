@@ -23,7 +23,8 @@ const getAllJobs = async (req, res) => {
   const queryObject = {
     cretedBy: req.user.userId
   }
-  const jobs = Job.find(queryObject)
+  let result = Job.find(queryObject)
+  
   res.status(StatusCodes.OK).json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
 }
 
