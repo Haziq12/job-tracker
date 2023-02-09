@@ -214,7 +214,7 @@ const AppProvider = ({ children }) => {
       })
     } catch (err) {
       console.log(err.response)
-      // logOutUser
+      logoutUser()
     }
     clearAlert()
   }
