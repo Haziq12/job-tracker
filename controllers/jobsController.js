@@ -55,6 +55,9 @@ const getAllJobs = async (req, res) => {
     result = result.sort('-position')
   }
 
+  const limit = 0
+  const skip = 0
+
   const jobs = await result
 
   res.status(StatusCodes.OK).json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
