@@ -17,6 +17,7 @@ const SearchContainer = () => {
   } = useAppContext()
 
   const handleSearch = (e) => {
+    if(isLoading) return 
     console.log(e.target.name)
   }
 
