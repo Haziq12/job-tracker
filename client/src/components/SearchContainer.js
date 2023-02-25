@@ -16,10 +16,24 @@ const SearchContainer = () => {
     clearFilters
   } = useAppContext()
 
+  const handleSearch = (e) => {
+    console.log(e.target.name)
+  }
+
   return (
-    <h1>
-      SearchContainer
-    </h1>
+    <Wrapper>
+      <form className='form'>
+        <h4>Search Form</h4>
+        <div className="form-center">
+          <FormRow 
+            type='text' 
+            name='search'
+            value={search}
+            handleChange={handleSearch}
+            ></FormRow>
+        </div>
+      </form>
+    </Wrapper>
   )
 }
 
