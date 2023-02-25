@@ -29,11 +29,9 @@ const getAllJobs = async (req, res) => {
       queryObject.status = status
     }
 
-  if (jobType) {
-    if (jobType !== 'All') {
+    if (jobType && jobType !== 'All') {
       queryObject.jobType = jobType
     }
-  }
 
   if (search) {
     queryObject.position = { $regex: search, $options: 'i' }
