@@ -280,6 +280,10 @@ const AppProvider = ({ children }) => {
     clearValues()
   }
 
+  const clearFilters = () => {
+    console.log('clear fitlers')
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -297,7 +301,8 @@ const AppProvider = ({ children }) => {
         setEditJob,
         deleteJob,
         editJob,
-        showStats
+        showStats,
+        clearFilters
       }}
     >
       {children}
