@@ -58,7 +58,12 @@ export const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
-  monthlyApplications: []
+  monthlyApplications: [],
+  search: '',
+  searchStatus: 'All',
+  searchType: 'All',
+  sort: 'Latest',
+  sortOptions:['Latest', 'Oldest', 'a-z', 'z-a']
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
