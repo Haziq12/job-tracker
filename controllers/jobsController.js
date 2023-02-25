@@ -37,6 +37,11 @@ const getAllJobs = async (req, res) => {
     }
   }
 
+  
+  if(search) {
+    queryObject.position = search 
+  }
+
   let result = Job.find(queryObject)
 
   const jobs = await result

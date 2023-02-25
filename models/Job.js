@@ -14,12 +14,12 @@ const JobSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ['Interview', 'Declined', 'Pending', 'All'],
-    default: 'Pending'
+    default: 'All'
   },
   jobType: {
     type: String,
-    enum: ['Full Time', 'Part Time', 'Remote', 'Internship', 'All'],
-    default: 'Full Time'
+    enum: ['Full-Time', 'Part-Time', 'Remote', 'Internship', 'All'],
+    default: 'All'
   },
   jobLocation: {
     type: String,
