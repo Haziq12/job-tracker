@@ -25,27 +25,38 @@ const getAllJobs = async (req, res) => {
     createdBy: req.user.userId
   }
 
-  if(status) {
-    if(status !== 'All') {
-      queryObject.status = status 
+  if (status) {
+    if (status !== 'All') {
+      queryObject.status = status
     }
   }
 
-  if(jobType) {
-    if(jobType !== 'All') {
+  if (jobType) {
+    if (jobType !== 'All') {
       queryObject.jobType = jobType
     }
   }
 
-  
-  if(search) {
-    queryObject.position = { $regex: search, $options: 'i'}
+  if (search) {
+    queryObject.position = { $regex: search, $options: 'i' }
   }
 
   let result = Job.find(queryObject)
 
+  if(sort === 'Latest') {
+    result = result.sort('-createdAt')
+  }
+
+  if(sort === 'Oldest') {
+    result = result.sort('createdAt')
+  }
+
+  if(sort === 'a-z') {
+    result = result.sort('position')
+  }
+
   const jobs = await result
-  
+
   res.status(StatusCodes.OK).json({ jobs, totalJobs: jobs.length, numOfPages: 1 })
 }
 
@@ -120,7 +131,7 @@ const showStats = async (req, res) => {
     const date = moment().month(month - 1).year(year).format('MMM Y')
     return { date, count }
   }).reverse()
-  
+
   res.status(StatusCodes.OK).json({ defaultStats, monthlyApplications })
 }
 
