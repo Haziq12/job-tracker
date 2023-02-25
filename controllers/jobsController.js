@@ -39,7 +39,7 @@ const getAllJobs = async (req, res) => {
 
   
   if(search) {
-    queryObject.position = search 
+    queryObject.position = { $regex: search, $options: 'i'}
   }
 
   let result = Job.find(queryObject)
