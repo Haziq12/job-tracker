@@ -8,6 +8,7 @@ const JobsContainer = () => {
   const { getJobs, jobs, isLoading, page, totalJobs } = useAppContext()
 
   useEffect(() => {
+    console.log('useEffect getJobs')
     getJobs()
   }, [])
 
