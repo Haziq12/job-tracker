@@ -211,8 +211,8 @@ const AppProvider = ({ children }) => {
   const getJobs = async () => {
     const {search, searchStatus, sort, searchType} = state
 
-    let url = `/jobs`
-    
+    let url = `/jobs?status=${searchStatus}&jobType=${searchType}&sort=${sort}`
+
     dispatch({ type: GET_JOBS_BEGIN })
     try {
       const { data } = await authFetch(url)
