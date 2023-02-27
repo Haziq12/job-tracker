@@ -9,7 +9,7 @@ const JobsContainer = () => {
 
   useEffect(() => {
     getJobs()
-  }, [search])
+  }, [search, searchStatus, sort, searchType])
 
   if (isLoading) {
     return <Loading center />
