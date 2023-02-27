@@ -16,6 +16,11 @@ const SearchContainer = () => {
     clearFilters
   } = useAppContext()
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    clearFilters()
+  }
+
   const handleSearch = (e) => {
     if (isLoading) return
     handleChange({ name: e.target.name, value: e.target.value })
@@ -52,7 +57,10 @@ const SearchContainer = () => {
             handleChange={handleSearch}
             list={sortOptions}
           />
-          <button className="btn btn-block btn-danger" disabled={isLoading}>
+          <button
+            className="btn btn-block btn-danger"
+            disabled={isLoading}
+            onClick={handleSubmit}>
             Clear Filters
           </button>
         </div>
