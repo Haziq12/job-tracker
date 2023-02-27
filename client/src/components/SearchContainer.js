@@ -32,13 +32,14 @@ const SearchContainer = () => {
         <h4>Search Form</h4>
         <div className="form-center">
           <FormRow
+            labelText='Search by job title'
             type='text'
             name='search'
             value={search}
             handleChange={handleSearch}
           />
           <FormRowSelect
-            labelText='Status'
+            labelText='Job Status'
             name='searchStatus'
             value={searchStatus}
             handleChange={handleSearch}

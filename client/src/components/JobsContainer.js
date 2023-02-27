@@ -8,9 +8,8 @@ const JobsContainer = () => {
   const { getJobs, jobs, isLoading, page, totalJobs, search, searchStatus, sort, searchType } = useAppContext()
 
   useEffect(() => {
-    console.log('useEffect getJobs')
     getJobs()
-  }, [])
+  }, [search])
 
   if (isLoading) {
     return <Loading center />
