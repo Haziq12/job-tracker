@@ -31,7 +31,14 @@ const SearchContainer = () => {
             name='search'
             value={search}
             handleChange={handleSearch}
-            ></FormRow>
+            />
+          <FormRowSelect
+            labelText='Status'
+            name='searchStatus' 
+            value={searchStatus}
+            handleChange={handleSearch} 
+            list={['All', ...statusOptions]}
+          />
         </div>
       </form>
     </Wrapper>
