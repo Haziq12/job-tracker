@@ -276,6 +276,16 @@ const reducer = (state, action) => {
     }
   }
 
+  if(action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      search: '',
+      searchStatus: 'All',
+      searchType: 'All',
+      sort: 'Latest',
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
