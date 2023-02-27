@@ -50,7 +50,7 @@ const SearchContainer = () => {
             labelText='Sort'
             value={sort}
             handleChange={handleSearch} 
-            list={['All', ...sortOptions]}
+            list={sortOptions}
           />
           
         </div>
