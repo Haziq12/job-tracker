@@ -287,6 +287,13 @@ const reducer = (state, action) => {
     }
   }
 
+  if (action.type === CHANGE_PAGE) {
+    return {
+      ...state,
+      page: action.payload.page
+    }
+  }
+
   throw new Error(`no such action :${action.type}`)
 }
 export default reducer
