@@ -27,7 +27,8 @@ import {
   EDIT_JOB_SUCCESS,
   EDIT_JOB_ERROR,
   SHOW_STATS_BEGIN,
-  SHOW_STATS_SUCCESS
+  SHOW_STATS_SUCCESS,
+  CLEAR_FILTERS
 } from './actions'
 import axios from 'axios'
 
@@ -63,7 +64,7 @@ export const initialState = {
   searchStatus: 'All',
   searchType: 'All',
   sort: 'Latest',
-  sortOptions:['Latest', 'Oldest', 'a-z', 'z-a']
+  sortOptions: ['Latest', 'Oldest', 'a-z', 'z-a']
 }
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
@@ -267,7 +268,7 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await authFetch(`/jobs/stats`)
       dispatch({
-        type: SHOW_STATS_SUCCESS, 
+        type: SHOW_STATS_SUCCESS,
         payload: {
           stats: data.defaultStats,
           monthlyApplications: data.monthlyApplications
@@ -281,7 +282,7 @@ const AppProvider = ({ children }) => {
   }
 
   const clearFilters = () => {
-    console.log('clear fitlers')
+    dispatch({ type: CLEAR_FILTERS })
   }
 
   return (
