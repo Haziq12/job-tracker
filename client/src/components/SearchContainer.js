@@ -39,6 +39,14 @@ const SearchContainer = () => {
             handleChange={handleSearch} 
             list={['All', ...statusOptions]}
           />
+          <FormRowSelect
+            labelText='Job Type'
+            name='searchType' 
+            value={searchType}
+            handleChange={handleSearch} 
+            list={['All', ...jobTypeOptions]}
+          />
+
         </div>
       </form>
     </Wrapper>
