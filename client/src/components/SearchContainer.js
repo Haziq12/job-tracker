@@ -53,6 +53,7 @@ const SearchContainer = () => {
           />
           <FormRowSelect
             labelText='Sort'
+            name='sort'
             value={sort}
             handleChange={handleSearch}
             list={sortOptions}
