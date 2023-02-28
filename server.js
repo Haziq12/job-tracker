@@ -23,11 +23,9 @@ import authenticateUser from './middleware/auth.js'
 if(process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
-app.use(express.json())
 
-app.get('/api/v1', (req, res) => {
-  res.json({ msg: 'Welcome' })
-})
+app.use(express.json())
+app.use(express.static(path.resolve(__dirname, './client/build')))
 
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticateUser, jobsRouter)
