@@ -97,7 +97,6 @@ const updateJob = async (req, res) => {
 }
 
 const deleteJob = async (req, res) => {
-  console.log('here: ', req.user)
   const { id: jobID } = req.params
   const job = await Job.findOne({ _id: jobID })
   if (!job) {
