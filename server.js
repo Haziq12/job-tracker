@@ -5,6 +5,10 @@ dotenv.config()
 import 'express-async-errors'
 import morgan from 'morgan'
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
 import connectDB from './db/connect.js'
 
 // routers
