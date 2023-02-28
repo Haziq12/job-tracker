@@ -227,7 +227,6 @@ const AppProvider = ({ children }) => {
         payload: { jobs, numOfPages, totalJobs }
       })
     } catch (err) {
-      console.log(err.response)
       logoutUser()
     }
     clearAlert()
@@ -266,8 +265,7 @@ const AppProvider = ({ children }) => {
       await authFetch.delete(`/jobs/${jobId}`)
       getJobs()
     } catch (err) {
-      console.log(err, err.response, err.message)
-      // logoutUser()
+      logoutUser()
     }
   }
 
@@ -283,8 +281,7 @@ const AppProvider = ({ children }) => {
         },
       })
     } catch (err) {
-      console.log(err.response)
-      // logoutUser()
+      logoutUser()
     }
     clearValues()
   }
